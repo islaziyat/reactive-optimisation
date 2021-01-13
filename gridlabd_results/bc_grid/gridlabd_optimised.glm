@@ -1,0 +1,816 @@
+clock {
+	timestamp '2000-01-01 0:00:00';
+	stoptime '2000-01-01 0:00:05';
+	timezone EST+5EDT;
+}
+
+module powerflow {
+  solver_method NR;
+}
+
+module tape;
+
+object underground_line_conductor { 
+	name ug_lc_7210;
+	outer_diameter 1.980000;
+	conductor_gmr 0.036800;
+	conductor_diameter 1.150000;
+	conductor_resistance 0.105000;
+	neutral_gmr 0.003310;
+	neutral_resistance 5.903000;
+	neutral_diameter 0.102000;
+	neutral_strands 20.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+// Phase Conductor for 722: 500,000 AA,CN - MAX 483 A
+object underground_line_conductor { 
+	name ug_lc_7220;
+	outer_diameter 1.560000;
+	conductor_gmr 0.026000;
+	conductor_diameter 0.813000;
+	conductor_resistance 0.206000;
+	neutral_gmr 0.002620;
+	neutral_resistance 9.375000;
+	neutral_diameter 0.081000;
+	neutral_strands 16.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+// Phase Conductor for 723: 2/0 AA,CN - MAX 230 A
+object underground_line_conductor { 
+	name ug_lc_7230;
+	outer_diameter 1.100000;
+	conductor_gmr 0.012500;
+	conductor_diameter 0.414000;
+	conductor_resistance 0.769000;
+	neutral_gmr 0.002080;
+	neutral_resistance 14.872000;
+	neutral_diameter 0.064000;
+	neutral_strands 7.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+// Phase Conductor for 724: //2 AA,CN  - MAX 156 A
+object underground_line_conductor { 
+	name ug_lc_7240;
+	outer_diameter 0.980000;
+	conductor_gmr 0.008830;
+	conductor_diameter 0.292000;
+	conductor_resistance 1.540000;
+	neutral_gmr 0.002080;
+	neutral_resistance 14.872000;
+	neutral_diameter 0.064000;
+	neutral_strands 6.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+// Phase Conductor for 606: //250,000 AA, CN
+object underground_line_conductor { 
+	name ug_lc_606;
+	outer_diameter 1.200;
+	conductor_gmr 0.017100;
+	conductor_diameter 0.56700;
+	conductor_resistance 0.41000;
+	neutral_gmr 0.002080;
+	neutral_resistance 14.872000;
+	neutral_diameter 0.064000;
+	neutral_strands 13.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+// Phase Conductor for 607: //1/0 AA, TS
+object underground_line_conductor { 
+	name ug_lc_607;
+	outer_diameter 1.06;			
+	conductor_gmr 0.0111;
+	conductor_diameter 0.368;
+	conductor_resistance 0.97;
+	neutral_gmr 0.01113;
+	neutral_resistance 0.607;
+	neutral_diameter 0.368;
+	neutral_strands 6.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+
+// Phase Conductor for 12: //1/0 AA, CN
+object underground_line_conductor { 
+	name ug_lc_12;
+	outer_diameter 1.06;			
+	conductor_gmr 0.0111;
+	conductor_diameter 0.368;
+	conductor_resistance 0.97;
+	neutral_gmr 0.002080;
+	neutral_resistance 14.872000;
+	neutral_diameter 0.064000;
+	neutral_strands 6.000000;
+	shield_gmr 0.000000;
+	shield_resistance 0.000000;
+}
+
+object overhead_line_conductor  {
+	name _556500ACSR;
+	geometric_mean_radius 0.0311;
+	resistance 0.186;
+	}
+
+
+object overhead_line_conductor  {
+	name _3364000ACSR;
+	geometric_mean_radius 0.0244;
+	resistance 0.306;
+	}
+
+object overhead_line_conductor  {
+	name _10ACSR;
+	geometric_mean_radius .00446;
+	resistance 1.12;
+	}
+
+
+object overhead_line_conductor  { 
+	name _2ACSR;
+	geometric_mean_radius 0.00418;
+	resistance 1.69;
+}
+
+object overhead_line_conductor  {
+	name _4ACSR;
+	geometric_mean_radius 0.00814;
+	resistance 0.592;
+	}
+
+//Original line spacing
+object line_spacing {
+	name spacing_515;
+	distance_AB 0.500000;
+	distance_BC 0.500000;
+	distance_AC 1.000000;
+	distance_AN 0.000000;
+	distance_BN 0.000000;
+	distance_CN 0.000000;
+}
+
+object line_spacing {
+	name spacing_500;
+	distance_AB 2.5;
+	distance_BC 4.5;
+	distance_AC 7.0;
+	distance_AN 5.656854;
+	distance_BN 4.272002;
+	distance_CN 5.0;
+}
+
+object line_spacing {
+	name spacing_500_ACBN;
+	distance_AC 2.5;
+	distance_AB 4.5;
+	distance_BC 7.0;
+	distance_CN 5.656854;
+	distance_AN 4.272002;
+	distance_BN 5.0;
+}
+
+object line_spacing {
+	name spacing_520_AN;
+	distance_AB 0.000000;
+	distance_BC 0.000000;
+	distance_AC 0.000000;
+	distance_AN 0.0833333;
+	distance_BN 0.0;
+	distance_CN 0.0;
+}
+
+object line_spacing {
+	name spacing_505_CBN;
+	distance_AB 0.000000;
+	distance_BC 7.000000;
+	distance_AC 0.000000;
+	distance_AN 0.000000;
+	distance_BN 5.0;
+	distance_CN 5.65685420;
+}
+
+object line_spacing {
+	name spacing_505_ACN;
+	distance_AB 0.000000;
+	distance_BC 0.000000;
+	distance_AC 7.000000;
+	distance_AN 5.65685420;
+	distance_BN 0.0;
+	distance_CN 5.0;
+}
+
+object line_spacing {
+	name spacing_510_CN;
+	distance_AB 0.000000;
+	distance_BC 0.000000;
+	distance_AC 0.000000;
+	distance_AN 0.0;
+	distance_BN 0.0;
+	distance_CN 5.0249378;
+}
+
+
+
+//line configurations:
+object line_configuration { // - MAX 698 A
+	name ug_721_line;
+	conductor_A ug_lc_7210;
+	conductor_B ug_lc_7210;
+	conductor_C ug_lc_7210;
+	spacing spacing_515;
+}
+
+object line_configuration { // - MAX 483 A
+	name ug_722_line;
+	conductor_A ug_lc_7220;
+	conductor_B ug_lc_7220;
+	conductor_C ug_lc_7220;
+	spacing spacing_515;
+}
+
+object line_configuration { // - MAX 230 A
+	name ug_723_line;
+	conductor_A ug_lc_7230;
+	conductor_B ug_lc_7230;
+	conductor_C ug_lc_7230;
+	spacing spacing_515;
+}
+
+object line_configuration { // - MAX 156 A
+	name ug_724_line;
+	conductor_A ug_lc_7240;
+	conductor_B ug_lc_7240;
+	conductor_C ug_lc_7240;
+	spacing spacing_515;
+}
+
+object line_configuration { 
+	name ug_606_line;
+	conductor_A ug_lc_606;
+	conductor_B ug_lc_606;
+	conductor_C ug_lc_606;
+	spacing spacing_515;
+}
+
+object line_configuration { 
+	name ug_607_line;
+	conductor_A ug_lc_607;
+	conductor_N ug_lc_607;
+	spacing spacing_520_AN;
+}
+
+object line_configuration { 
+	name ug_12_line;
+	conductor_A ug_lc_12;
+	conductor_B ug_lc_12;
+	conductor_C ug_lc_12;
+	spacing spacing_515;
+}
+
+object line_configuration {
+	name oh_336_ACSR_line;
+	conductor_A _3364000ACSR;
+	conductor_B _3364000ACSR;
+	conductor_C _3364000ACSR;
+	spacing spacing_500;
+}
+
+object line_configuration {
+	name oh_10_ACSR_line;
+	conductor_A _10ACSR;
+	conductor_B _10ACSR;
+	conductor_C _10ACSR;
+	spacing spacing_500;
+}
+
+object line_configuration {
+	name oh_20_ACSR_line;
+	conductor_A _2ACSR;
+	conductor_B _2ACSR;
+	conductor_C _2ACSR;
+	spacing spacing_500;
+}
+
+object line_configuration {
+	name oh_601_ACSR_line;
+	conductor_A _556500ACSR;
+	conductor_B _556500ACSR;
+	conductor_C _556500ACSR;
+	conductor_N _4ACSR;
+	spacing spacing_500;
+}
+
+object line_configuration {
+	name oh_602_ACSR_line;
+	conductor_A _4ACSR;
+	conductor_B _4ACSR;
+	conductor_C _4ACSR;
+	conductor_N _4ACSR;
+	spacing spacing_500_ACBN;
+}
+
+
+object line_configuration {
+	name oh_603_ACSR_line;
+	conductor_B _10ACSR;
+	conductor_C _10ACSR;
+	conductor_N _10ACSR;
+	spacing spacing_505_CBN;
+}
+
+
+object line_configuration {
+	name oh_604_ACSR_line;
+	conductor_A _10ACSR;
+	conductor_C _10ACSR;
+	conductor_N _10ACSR;
+	spacing spacing_505_ACN;
+}
+
+object line_configuration {
+	name oh_605_ACSR_line;
+	conductor_C _10ACSR;
+	conductor_N _10ACSR;
+	spacing spacing_510_CN;
+}
+
+object overhead_line {
+	phases "ABC";
+	name node1-2;
+	from node1;
+	to node2;
+	length 400;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node2-3;
+	from node2;
+	to node3;
+	length 800;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node3-4;
+	from node3;
+	to node4;
+	length 329;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node4-5;
+	from node4;
+	to node5;
+	length 329;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node5-6;
+	from node5;
+	to node6;
+	length 820;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node6-7;
+	from node6;
+	to node7;
+	length 164;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node7-8;
+	from node7;
+	to node8;
+	length 492;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node7-9;
+	from node7;
+	to node9;
+	length 656;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node6-10;
+	from node6;
+	to node10;
+	length 492;
+	configuration oh_336_ACSR_line;
+}
+object overhead_line {
+	phases "ABC";
+	name node10-11;
+	from node10;
+	to node11;
+	length 820;
+	configuration oh_10_ACSR_line;
+}
+object underground_line {
+	phases "ABC";
+	name node11-12;
+	from node11;
+	to node12;
+	length 820;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node11-13;
+	from node11;
+	to node13;
+	length 328;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node10-14;
+	from node10;
+	to node14;
+	length 656;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node14-15;
+	from node14;
+	to node15;
+	length 656;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node15-16;
+	from node15;
+	to node16;
+	length 492;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node15-17;
+	from node15;
+	to node17;
+	length 820;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node10-18;
+	from node10;
+	to node18;
+	length 558;
+	configuration ug_12_line;
+}
+object underground_line {
+	phases "ABC";
+	name node18-19;
+	from node18;
+	to node19;
+	length 1640;
+	configuration ug_12_line;
+}
+object node {
+	phases "ABC";
+	name node1;
+	bustype SWING;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node2;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node3;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node4;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node5;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node6;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node7;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node8;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node9;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node10;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node11;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node12;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node13;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node14;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node15;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node16;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node17;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node18;
+	nominal_voltage 14433.75673;
+}
+
+object node {
+	phases "ABC";
+	name node19;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node2;
+	name load2;
+	constant_power_A 0.000000+0.000000j;
+	constant_power_B 56000.000000+47300.000000j;
+	constant_power_C 0.000000+0.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node3;
+	name load3;
+	constant_power_A 160000.000000+71000.000000j;
+	constant_power_B 160000.000000+71000.000000j;
+	constant_power_C 380000.000000+154000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node4;
+	name load4;
+	constant_current_A 24.317993-11.777945j;
+	constant_current_B -12.908973-8.758997j;
+	constant_current_C -1.131027+15.558997j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node5;
+	name load5;
+	constant_power_A 120000.000000+106000.000000j;
+	constant_power_B 40000.000000+25000.000000j;
+	constant_power_C 0.000000+0.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node6;
+	name load6;
+	constant_power_A 35000.000000+27000.000000j;
+	constant_power_B 90000.000000+63000.000000j;
+	constant_power_C 20000.000000+17000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node8;
+	name load8;
+	constant_power_A 100000.000000+83000.000000j;
+	constant_power_B 120000.000000+90000.000000j;
+	constant_power_C 120000.000000+90000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node9;
+	name load9;
+	constant_power_A 0.000000+0.000000j;
+	constant_power_B 55000.000000+40000.000000j;
+	constant_power_C 50000.000000+23000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node10;
+	name load10;
+	constant_power_A 65000.000000+26000.000000j;
+	constant_power_B 65000.000000+26000.000000j;
+	constant_power_C 65000.000000+26000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node11;
+	name load11;
+	constant_current_A 4.988306-3.741230j;
+	constant_current_B -3.310615-1.414153j;
+	constant_current_C 0.430615+3.574153j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node12;
+	name load12;
+	constant_power_A 17000.000000+11000.000000j;
+	constant_power_B 0.000000+0.000000j;
+	constant_power_C 0.000000+0.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node13;
+	name load13;
+	constant_power_A 95000.000000+55000.000000j;
+	constant_power_B 95000.000000+55000.000000j;
+	constant_power_C 95000.000000+55000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node14;
+	name load14;
+	constant_power_A 70000.000000+39000.000000j;
+	constant_power_B 70000.000000+39000.000000j;
+	constant_power_C 70000.000000+39000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node16;
+	name load16;
+	constant_power_A 900000.000000+400000.000000j;
+	constant_power_B 900000.000000+400000.000000j;
+	constant_power_C 900000.000000+400000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node17;
+	name load17;
+	constant_power_A 1200000.000000+900000.000000j;
+	constant_power_B 1200000.000000+900000.000000j;
+	constant_power_C 1200000.000000+900000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node18;
+	name load18;
+	constant_power_A 900000.000000+400000.000000j;
+	constant_power_B 900000.000000+400000.000000j;
+	constant_power_C 900000.000000+400000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node19;
+	name load19;
+	constant_power_A 900000.000000+400000.000000j;
+	constant_power_B 900000.000000+400000.000000j;
+	constant_power_C 900000.000000+400000.000000j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node${DG1_location};
+	name DG1;
+	constant_power_A -${DG1_PhaseA}j;
+	constant_power_B -${DG1_PhaseB}j;
+	constant_power_C -${DG1_PhaseC}j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node${DG2_location};
+	name DG2;
+	constant_power_A -${DG2_PhaseA}j;
+	constant_power_B -${DG2_PhaseB}j;
+	constant_power_C -${DG2_PhaseC}j;
+	nominal_voltage 14433.75673;
+}
+
+object load {
+	phases "ABCD";
+	parent node${DG3_location};
+	name DG3;
+	constant_power_A -${DG3_PhaseA}j;
+	constant_power_B -${DG3_PhaseB}j;
+	constant_power_C -${DG3_PhaseC}j;
+	nominal_voltage 14433.75673;
+}
+
+object voltdump {
+	filename gridlabd_results/bc_grid/voltage_optimised.csv;
+}
+
+object currdump {
+	filename gridlabd_results/bc_grid/current_optimised.csv;
+}
+
+object collector {
+	group "class=underground_line";
+	property sum(power_losses_A.real),sum(power_losses_B.real),sum(power_losses_C.real);
+	interval 1;
+	file gridlabd_results/bc_grid/underground_line_losses.csv;
+}
+
+object collector {
+	group "class=overhead_line";
+	property sum(power_losses_A.real),sum(power_losses_B.real),sum(power_losses_C.real);
+	interval 1;
+	file gridlabd_results/bc_grid/overhead_line_losses.csv;
+}
+

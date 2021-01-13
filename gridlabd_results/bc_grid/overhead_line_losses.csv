@@ -1,0 +1,13 @@
+# file...... gridlabd_results/bc_grid/overhead_line_losses.csv
+# date...... Wed Jan 13 11:50:51 2021
+# user...... isla
+# host...... (null)
+# group..... class=overhead_line
+# trigger... (none)
+# interval.. 1
+# limit..... 0
+# property.. timestamp,sum(power_losses_A.real),sum(power_losses_B.real),sum(power_losses_C.real)
+2000-01-01 03:00:01 EST,+17710.9,+10371,+10441.8
+2000-01-01 03:00:02 EST,+17710.9,+10371,+10441.8
+2000-01-01 03:00:03 EST,+17710.9,+10371,+10441.8
+2000-01-01 03:00:04 EST,+17710.9,+10371,+10441.8
